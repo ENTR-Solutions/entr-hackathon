@@ -38,6 +38,7 @@ Veel gebruikers hier zijn geen developer. Met hen:
 ## Codeafspraken
 
 - Er staat een lege Next.js 16-app klaar (App Router, TypeScript, Tailwind 3, de ENTR-shadcn-kit), dezelfde stack als het ENTR-product. Gebruik die als het idee een scherm nodig heeft. Iets anders bouwen (een script, een Claude-skill, een rapport) mag ook.
+- Node.js 22.13 of nieuwer is nodig (voor `node:sqlite`). Gebruikt de laptop nvm (macOS of Linux), laad nvm dan in dezelfde opdracht als `npm` of `next`: `export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh" && nvm use && npm run dev`. Alleen `nvm use` kan in de shell van Claude mislukken, omdat `NVM_DIR` daar kan ontbreken. `nvm use` leest `.nvmrc` en laat de standaardversie van de gebruiker staan. Is versie 22 er nog niet, vraag dan eerst of je `nvm install` mag draaien.
 - In de app: standaard server components; `"use client"` alleen voor interactie. LLM- en database-aanroepen alleen op de server (server actions of route handlers).
 - Data die de app zelf bewaart, gaat in de SQLite-database: `db()` uit `@/lib/db` (SQLite van Node.js zelf, `node:sqlite`; installeer geen andere database of ORM). Zet tabellen in `data/schema.sql`; een nieuwe tabel werkt meteen. Bestaande tabel veranderd: stop de dev-server, draai `npm run db:reset` (wist alle data) en start opnieuw. Geef waarden altijd mee als `?`-parameter, plak ze nooit in de SQL. `GET /api/db/ping` laat zien of de database werkt.
 - De interface is Nederlands. Code (namen en commentaar) blijft Engels, zoals in Entr-Core.
