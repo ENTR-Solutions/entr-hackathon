@@ -1,0 +1,10 @@
+#!/bin/sh
+# Deze repo is openbaar: het werk van een team blijft op de laptop en wordt nooit gepusht.
+# Gaat een project verder na de hackathon, dan zet Thomas er een privérepo voor op.
+# Beheerders die de starter zelf bijwerken, omzeilen dit met: ALLOW_PUSH=1 git push ...
+
+if [ "$ALLOW_PUSH" != "1" ]; then
+  echo "Geweigerd: deze repo is openbaar, dus pushen kan niet. Jullie werk blijft op deze laptop."
+  echo "Gaat jullie project verder na de hackathon? Thomas zet er een privérepo voor op."
+  exit 1
+fi

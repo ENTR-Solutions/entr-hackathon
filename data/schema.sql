@@ -1,0 +1,10 @@
+-- Tables for the local database (src/lib/db.ts). This file runs every time the database opens and
+-- whenever it changes, so always write CREATE TABLE IF NOT EXISTS.
+-- Changed an existing table? Stop the dev server, run `npm run db:reset`, and start it again.
+--
+-- Example:
+-- CREATE TABLE IF NOT EXISTS notes (
+--   id INTEGER PRIMARY KEY AUTOINCREMENT,
+--   text TEXT NOT NULL,
+--   created_at TEXT NOT NULL DEFAULT (datetime('now'))
+-- );

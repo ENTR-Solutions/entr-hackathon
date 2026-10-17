@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git switch *)",
+      "Bash(git branch*)",
+      "Bash(git checkout -b *)",
+      "Bash(uv run *)",
+      "Bash(curl -s http://localhost:3000/*)",
+      "mcp__claude_ai_HubSpot__get_*",
+      "mcp__claude_ai_HubSpot__search_*",
+      "mcp__claude_ai_HubSpot__query_crm_data",
+      "mcp__claude_ai_HubSpot__discover_hubspot_schema"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.local)",
+      "Bash(git push*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean*)",
+      "Bash(rm -rf *)",
+
+      "mcp__claude_ai_Gmail__*",
+      "mcp__claude_ai_Jortt__*",
+      "mcp__jortt__*",
+      "mcp__n8n__*",
+
+      "mcp__claude_ai_HubSpot__manage_*",
+      "mcp__claude_ai_HubSpot__import-claude-design-from-url",
+      "mcp__hubspot__hubspot-create-*",
+      "mcp__hubspot__hubspot-update-*",
+      "mcp__hubspot__hubspot-batch-create-*",
+      "mcp__hubspot__hubspot-batch-update-*",
+
+      "mcp__claude_ai_Notion__notion-create-*",
+      "mcp__claude_ai_Notion__notion-update-*",
+      "mcp__claude_ai_Notion__notion-move-pages",
+      "mcp__claude_ai_Notion__notion-duplicate-page",
+      "mcp__claude_ai_Notion__notion-upload-skill",
+      "mcp__claude_ai_Notion__notion-convert-page-to-skill",
+      "mcp__claude_ai_Notion__notion-spawn-session",
+      "mcp__claude_ai_Notion__notion-send-message-to-session",
+      "mcp__claude_ai_Notion__notion-stop-session",
+
+      "mcp__claude_ai_Airtable__create_*",
+      "mcp__claude_ai_Airtable__update_*",
+      "mcp__claude_ai_Airtable__delete_*",
+      "mcp__claude_ai_Airtable__publish_*",
+      "mcp__claude_ai_Airtable__submit_form",
+      "mcp__claude_ai_Airtable__revert_action",
+      "mcp__claude_ai_Airtable__test_automation_webhook_trigger",
+
+      "mcp__claude_ai_Fireflies__fireflies_create_soundbite",
+      "mcp__claude_ai_Fireflies__fireflies_move_meeting",
+      "mcp__claude_ai_Fireflies__fireflies_revoke_meeting_access",
+      "mcp__claude_ai_Fireflies__fireflies_share_meeting",
+      "mcp__claude_ai_Fireflies__fireflies_update_meeting_privacy",
+      "mcp__claude_ai_Fireflies__fireflies_update_meeting_title",
+
+      "mcp__claude_ai_Google_Calendar__create_event",
+      "mcp__claude_ai_Google_Calendar__update_event",
+      "mcp__claude_ai_Google_Calendar__delete_event",
+      "mcp__claude_ai_Google_Calendar__respond_to_event",
+
+      "mcp__claude_ai_Google_Drive__create_*",
+      "mcp__claude_ai_Google_Drive__update_*",
+      "mcp__claude_ai_Google_Drive__delete_*",
+      "mcp__claude_ai_Google_Drive__upload_*",
+      "mcp__claude_ai_Google_Drive__share_*",
+      "mcp__claude_ai_Google_Drive__move_*"
+    ]
+  }
+}
