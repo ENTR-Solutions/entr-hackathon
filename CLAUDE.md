@@ -18,7 +18,7 @@ Veel gebruikers hier zijn geen developer. Met hen:
 2. **Kleine stappen.** Bouw een stukje, laat het zien in de preview, draai `npm run typecheck`, commit, en dan het volgende stukje.
 3. **Dataniveaus** (`docs/data-rules.md`): verzonnen data mag altijd; ENTR-systemen (HubSpot, Notion, Fireflies, Drive, Airtable) alleen-lezen via de eigen connector van de gebruiker en de skill `/snapshot`; klantdata, mailboxen, productiedatabases en financiële data nooit.
 4. **Geen geheimen in code.** De LLM-sleutel staat in `.env.local` (nooit lezen, nooit tonen, nooit committen). Vraag gebruikers nooit om API-sleutels of wachtwoorden van bedrijfssystemen.
-5. **Git:** werk op de teambranch `team/<slug>`, nooit op `main` (een pre-commit-hook blokkeert dat). **Nooit pushen:** deze repo is openbaar, en het werk van een team blijft op hun laptop. Vraagt iemand om te pushen of te delen: leg dat uit, en zeg dat Thomas een privérepo opzet voor projecten die na de hackathon verdergaan.
+5. **Git:** commit alles direct op `main`. Maak geen branches, worktrees of pull requests, ook niet als je dat normaal zou doen. **Nooit pushen:** deze repo is openbaar, en het werk van een team blijft op hun laptop. Vraagt iemand om te pushen of te delen: leg dat uit, en zeg dat Thomas een privérepo opzet voor projecten die na de hackathon verdergaan.
 
 ## Waar alles staat
 

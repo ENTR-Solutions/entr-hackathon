@@ -1,6 +1,6 @@
 ---
 name: start-team
-description: Zet een hackathonteam op in deze repo - teambranch, teammap, plek voor de BMAD-documenten en een startpagina. Gebruik als iemand /start-team typt, of zegt dat ze willen beginnen, hun team willen aanmaken of hun teambranch willen maken.
+description: Zet een hackathonteam op in deze repo - teammap, plek voor de BMAD-documenten en een startpagina. Gebruik als iemand /start-team typt, of zegt dat ze willen beginnen of hun team willen aanmaken.
 ---
 
 # Een team starten
@@ -15,8 +15,8 @@ Veel deelnemers zijn geen developer. Doe het git-werk voor ze en leg het in éé
 
 ## Doe
 
-1. Maak een slug van de teamnaam: kleine letters, cijfers en streepjes (bijv. "Team Duin" → `team-duin`).
-2. Zijn er niet-gecommitte wijzigingen, stop dan en vraag wat ermee moet. Anders: `git switch main`, daarna `git switch -c team/<slug>`. Bestaat de branch al, schakel er dan naar over en zeg dat.
+1. Maak een slug van de teamnaam: kleine letters, cijfers en streepjes (bijv. "Team Duin" → `team-duin`). Alles blijft op `main`: maak geen branch.
+2. Bestaat `teams/<slug>/` al, zeg dat dan en ga verder met wat er is.
 3. Maak `teams/<slug>/TEAM.md`:
 
    ```markdown
@@ -44,9 +44,9 @@ Veel deelnemers zijn geen developer. Doe het git-werk voor ze en leg het in éé
 
    - Controleer met `uv run _bmad/scripts/resolve_config.py --project-root .` dat `core.output_folder` nu `teams/<slug>` is.
 5. Maak `src/app/<slug>/page.tsx`: een eenvoudige server component met de teamnaam als titel, met `Card` uit `@/components/ui/card`, in het Nederlands. Daar komt hun app, op `/<slug>`, als hun idee een scherm krijgt.
-6. Commit: `git add teams/<slug> src/app/<slug> _bmad/custom/config.toml` en `git commit -m "<teamnaam>: start"`.
+6. Commit op `main`: `git add teams/<slug> src/app/<slug> _bmad/custom/config.toml` en `git commit -m "<teamnaam>: start"`.
 
 ## Vertel ze daarna
 
-- Hun branch, hun map, en dat hun app in de preview op `/<slug>` staat.
+- Hun map, en dat hun app in de preview op `/<slug>` staat.
 - De volgende stap: `/bmad-brainstorming` als het idee nog open is, anders `/bmad-forge-idea`. Daarna vullen ze de probleemstelling in TEAM.md in.

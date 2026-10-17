@@ -1,6 +1,6 @@
 # teams/
 
-Elk team krijgt `teams/<slug>/` op een eigen branch (`team/<slug>`), aangemaakt door `/start-team`:
+Elk team krijgt `teams/<slug>/`, aangemaakt door `/start-team`. Alles staat op `main`; er wordt niet gepusht.
 
 - `TEAM.md`: leden, idee en probleemstelling
 - `planning/`: BMAD-documenten (brainstorm, brief)

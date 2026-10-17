@@ -1,12 +1,5 @@
 #!/bin/sh
-# Houd main schoon: teams committen op hun eigen branch (team/<naam>), gemaakt met /start-team.
-# Beheerders die de starter zelf bijwerken, omzeilen dit met: ALLOW_MAIN=1 git commit ...
-
-branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-if [ "$branch" = "main" ] && [ "$ALLOW_MAIN" != "1" ]; then
-  echo "Je zit op main. Maak eerst je teambranch: typ /start-team in Claude (of: git switch -c team/<naam>)."
-  exit 1
-fi
+# Teams committen gewoon op main: er wordt nooit gepusht, dus het werk blijft op de laptop.
 
 # Nooit geheimen, privé-snapshots of de lokale database committen.
 if git diff --cached --name-only | grep -E '(^|/)\.env(\..*)?$|^data/private/|^data/.*\.db(-.*)?$' | grep -v -E '^\.env\.example$|^data/private/README\.md$' >/dev/null; then

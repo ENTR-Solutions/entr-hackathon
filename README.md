@@ -25,10 +25,10 @@ Maak mijn laptop klaar voor de ENTR-hackathon. Ik ben geen developer: leg elke s
 3. Clone https://github.com/ENTR-Solutions/entr-hackathon in deze map, als de map entr-hackathon er nog niet is. Draai daarin npm install (blokkeert PowerShell dat, gebruik dan npm.cmd).
 4. Draai in entr-hackathon: uv run _bmad/scripts/resolve_config.py --project-root . Dat haalt alvast op wat BMAD nodig heeft.
 5. Maak in entr-hackathon het bestand .env.local als kopie van .env.example, als het nog niet bestaat, en open het in Kladblok (Windows) of TextEdit (macOS). Zeg dat ik de hackathon-sleutel van Thomas achter ANTHROPIC_API_KEY= plak en opsla. Vraag nooit om de sleutel in deze chat en lees het bestand niet.
-6. Sluit af met: "Klaar. Start een nieuwe sessie, kies de map entr-hackathon (in Hackathon) en typ: start de app, controleer /api/llm/ping en /api/db/ping, en laat me de startpagina zien."
+6. Sluit af met: "Klaar. Start een nieuwe sessie, kies de map entr-hackathon (in Hackathon), laat de optie worktree uit, en typ: start de app, controleer /api/llm/ping en /api/db/ping, en laat me de startpagina zien."
 ```
 
-Zie je daarna de startpagina in het previewvenster, dan ben je klaar.
+Zie je daarna de startpagina in het previewvenster, dan ben je klaar. Start een sessie voortaan altijd in de map entr-hackathon, zonder de optie **worktree**: dan komt alles direct op `main` en maakt Claude geen pull request.
 
 Optioneel, voor ideeën met bedrijfsdata: koppel HubSpot, Notion, Fireflies of Google Drive via claude.ai → Instellingen → Connectors met je eigen account. Zie `docs/data-rules.md`.
 
@@ -36,7 +36,7 @@ Developer? Installeer Node.js 22.13+, git en uv zelf, clone de repo, draai `npm 
 
 ## Op de dag zelf
 
-1. Typ `/start-team`: Claude maakt jullie teambranch en teammap.
+1. Typ `/start-team`: Claude maakt jullie teammap.
 2. Brainstorm (`/bmad-brainstorming`) of zet je idee onder druk (`/bmad-forge-idea`), en schrijf de probleemstelling op.
 3. Bouw. Kwijt? Typ `/bmad-help`.
 
@@ -56,7 +56,7 @@ ENTR's eigen systemen (HubSpot, Notion, Fireflies, Drive, Airtable) mogen **alle
 
 ## Voor beheerders
 
-- Commits op `main` worden geblokkeerd door `.githooks/pre-commit`; beheerders omzeilen dat met `ALLOW_MAIN=1 git commit ...`.
+- Teams committen op `main` en maken geen branches of pull requests. `.githooks/pre-commit` weigert alleen `.env`-bestanden, snapshots en de database.
 - De repo is openbaar, dus teams pushen niet: `.githooks/pre-push` en `.claude/settings.json` blokkeren elke push. Beheerders pushen updates van de starter met `ALLOW_PUSH=1 git push`. Gaat een project verder na de hackathon, dan krijgt het een eigen privérepo.
 - BMAD praat en schrijft Nederlands via `_bmad/custom/config.toml`.
 - Na de hackathon: de documenten in `teams/<slug>/` van de winnende teams gaan naar `Entr-Core/_bmad-output/planning-artifacts/hackathon-2026-10/`; de prototypecode is de UX-referentie, geen productiecode.

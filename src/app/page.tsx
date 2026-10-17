@@ -27,7 +27,7 @@ export default function StartPage() {
         <CardContent>
           <ol className="list-decimal space-y-2 pl-5 text-sm">
             <li>
-              Typ <code>/start-team</code>: Claude maakt je teambranch en een map voor jullie werk.
+              Typ <code>/start-team</code>: Claude maakt een map voor jullie werk.
             </li>
             <li>
               Nog geen idee? <code>/bmad-brainstorming</code>. Wel een idee? Zet het onder druk met{" "}
